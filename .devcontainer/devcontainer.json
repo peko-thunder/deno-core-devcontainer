@@ -1,0 +1,18 @@
+{
+  "name": "deno-core-devcontainer",
+  "runArgs": ["--name=deno-core-devcontainer"],
+  "dockerFile": "../Dockerfile",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "mounts": [
+    "source=deno-core-devcontainer,target=${containerWorkspaceFolder}/deno_core,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      // "settings": {
+      //   "rust-analyzer.cargo.features": ["__runtime_js_sources"]
+      // },
+      "extensions": ["rust-lang.rust-analyzer", "denoland.vscode-deno"]
+    }
+  }
+}
